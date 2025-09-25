@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration System for managing student records">
+    <meta name="keywords" content="student, registration, system, records">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Student Registration System</h1>
+        <p class="tagline">
+            A simple platform to <strong>register</strong>, <strong>edit</strong>, and <strong>manage</strong> 
+            student records efficiently. Add new students, update their details, or remove records 
+            with just a few clicks!
+        </p>
+    </header>
+    <main>
+        <section id="student-form">
+            <form id="registration-form">
+                <h2>Register/Edit Student</h2>
+                <div class="form-group">
+                    <label for="name">Student Name*</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label for="student-id">Student ID*</label>
+                    <input type="text" id="student-id" name="student-id" required placeholder="e.g., S2023001">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID*</label>
+                    <input type="email" id="email" name="email" required placeholder="student@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact No.*</label>
+                    <input type="tel" id="contact" name="contact" required placeholder="+91 9876543210" pattern="[0-9]{10}">
+                </div>
+                <div class="form-group">
+                    <label for="class">Class/Grade</label>
+                    <input type="text" id="class" name="class" placeholder="e.g., 10th Grade">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3" placeholder="Enter full address"></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-submit">Save Student</button>
+                    <button type="reset" class="btn-reset">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="student-records">
+            <h2>Registered Students</h2>
+            <div class="records-container">
+                <div class="records-header">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search students...">
+                        <button id="search-btn" class="btn-search">
+                            <i class="search-icon">🔍</i>
+                        </button>
+                    </div>
+                    <div class="records-count">
+                        <span id="count">0</span> students registered
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="students-table">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Contact No.</th>
+                                <th>Class</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Student records will be inserted here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="no-records" id="no-records">
+                    <p>No student records found. Register a student to begin.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Student Registration System | Developed with ❤️</p>
+            <p class="footer-links">
+                <a href="#" id="privacy-link">Privacy Policy</a> | 
+                <a href="#" id="terms-link">Terms of Service</a> | 
+                <a href="#" id="contact-link">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Privacy Policy</h2>
+            <div class="modal-body">
+                <p><strong>Last Updated:</strong> May 2025</p>
+                <h3>1. Information Collection</h3>
+                <p>We collect student information including name, ID, email, contact number, class, and address solely for registration purposes.</p>
+                
+                <h3>2. Data Usage</h3>
+                <p>All collected data is used exclusively for student registration and management within this system.</p>
+                
+                <h3>3. Data Protection</h3>
+                <p>Your information is stored locally in your browser and is not transmitted to any external servers.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Terms of Service</h2>
+            <div class="modal-body">
+                <p><strong>Last Updated:</strong> May 2025</p>
+                <h3>1. Acceptance</h3>
+                <p>By using this system, you agree to these terms and conditions.</p>
+                
+                <h3>2. User Responsibilities</h3>
+                <p>You are responsible for maintaining accurate information and keeping your data secure.</p>
+                
+                <h3>3. Limitations</h3>
+                <p>This system is provided as-is without warranties. The developers are not liable for any data loss.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Contact Us</h2>
+            <div class="modal-body">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Your Name*</label>
+                        <input type="text" id="contact-name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email*</label>
+                        <input type="email" id="contact-email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" placeholder="Subject of your message">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message*</label>
+                        <textarea id="contact-message" rows="5" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                        <button type="button" class="btn-reset close-contact">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

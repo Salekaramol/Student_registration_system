@@ -1,0 +1,574 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3a0ca3;
+  --accent-color: #4cc9f0;
+  --success-color: #38b000;
+  --danger-color: #ff0054;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --gray-color: #6c757d;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #f9fbfd;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  margin-bottom: 3rem;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), rgba(76, 201, 240, 0));
+}
+
+h1 {
+  color: white;
+  margin: 0 0 0.75rem;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.tagline {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+/* Main Container */
+main {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* Form Styling */
+#student-form {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#student-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--dark-color);
+  font-size: 1rem;
+  margin-left: 0.25rem;
+}
+
+input, textarea {
+  padding: 14px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: #fcfcfc;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+  background-color: white;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Button Styling */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-submit {
+  background-color: var(--success-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(58, 176, 0, 0.2);
+}
+
+.btn-submit:hover {
+  background-color: #32a000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 176, 0, 0.3);
+}
+
+.btn-reset {
+  background-color: white;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+}
+
+.btn-reset:hover {
+  background-color: var(--danger-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Records Section Styling */
+#student-records {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#student-records h2 {
+  color: var(--secondary-color);
+  margin-bottom: 1.75rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+#search-input {
+  padding: 12px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  width: 100%;
+  flex-grow: 1;
+  background-color: #fcfcfc;
+}
+
+.btn-search {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 18px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+}
+
+.btn-search:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.records-count {
+  font-weight: 600;
+  color: var(--gray-color);
+  font-size: 1.05rem;
+}
+
+.records-count span {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+th, td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+th {
+  background-color: var(--light-color);
+  font-weight: 700;
+  color: var(--dark-color);
+  position: sticky;
+  top: 0;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+tr:hover {
+  background-color: rgba(76, 201, 240, 0.08);
+}
+
+.action-btns {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-edit, .btn-delete {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: var(--dark-color);
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #e00040;
+  transform: translateY(-1px);
+}
+
+.no-records {
+  text-align: center;
+  padding: 3rem;
+  color: var(--gray-color);
+  display: none;
+  background-color: #fcfcfc;
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+}
+
+.no-records p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideDown 0.3s ease-out;
+}
+
+.close-modal {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--gray-color);
+  transition: var(--transition);
+  background: none;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-modal:hover {
+  color: var(--danger-color);
+  transform: rotate(90deg);
+}
+
+.modal h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.modal-body {
+  margin-top: 1.5rem;
+}
+
+.modal-body h3 {
+  color: var(--secondary-color);
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.modal-body p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Contact Form Styles */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#contact-form .form-group {
+  margin-bottom: 0;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+}
+
+/* Footer Styling */
+footer {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: white;
+  padding: 2.5rem 0;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+}
+
+.footer-links {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { 
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  to { 
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  main {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+      padding: 2.5rem 1.5rem;
+  }
+  
+  h1 {
+      font-size: 2.25rem;
+  }
+  
+  .tagline {
+      font-size: 1.1rem;
+  }
+  
+  main {
+      padding: 0 1.5rem;
+      margin-bottom: 3rem;
+  }
+  
+  #student-form, #student-records {
+      padding: 2rem;
+  }
+  
+  .modal-content {
+      padding: 1.5rem;
+  }
+  
+  .button-group {
+      flex-direction: column;
+  }
+  
+  button {
+      width: 100%;
+  }
+  
+  .records-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.25rem;
+  }
+  
+  .search-container {
+      max-width: 100%;
+  }
+  
+  .footer-links {
+      flex-direction: column;
+      gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      padding: 2rem 1rem;
+  }
+  
+  h1 {
+      font-size: 2rem;
+  }
+  
+  #student-form, #student-records {
+      padding: 1.5rem;
+  }
+  
+  .modal-content {
+      width: 95%;
+      padding: 1.5rem 1rem;
+  }
+  
+  input, textarea, button {
+      padding: 12px 16px;
+  }
+  
+  .close-modal {
+      right: 1rem;
+      top: 0.5rem;
+  }
+}
