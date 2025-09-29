@@ -12,4 +12,9 @@ A web app for managing student records with:
 **Technologies Used**:  
 - HTML5  
 - CSS3 (Flexbox, Grid)  
-- JavaScript (ES6)  
+
+- JavaScript (ES6)
+
+## SETUP INSTRUCTION
+* CLONE THE REPOSITORY
+* https://github.com/Salekaramol/Student_registration_system.git
